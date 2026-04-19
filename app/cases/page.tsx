@@ -48,7 +48,7 @@ export default function CasesPage() {
 
         <div className="space-y-12 mb-20">
           {cases.map((item, index) => (
-            <div key={item.id} className={`bg-white rounded-2xl overflow-hidden border border-[#E8DFD8] flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} shadow-sm`}>
+            <div key={item.id} className={`bg-white rounded-2xl overflow-hidden border border-[#E8DFD8] hover:border-[#8C6A53]/30 transition-all cursor-pointer flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} shadow-sm hover:shadow-lg`}>
               <div className="md:w-1/2 relative h-64 md:h-auto min-h-[300px]">
                 <Image
                   src={item.image}

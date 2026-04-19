@@ -101,9 +101,9 @@ export default function ConsultingPage() {
                   <label className="block text-sm font-medium text-[#2C2825] mb-3">거래 유형 <span className="text-red-500">*</span></label>
                   <div className="flex gap-4">
                     {["매도", "전세", "월세"].map((type) => (
-                      <label key={type} className="flex-1 cursor-pointer">
+                      <label key={type} className="flex-1 cursor-pointer relative">
                         <input type="radio" name="transactionType" value={type} className="peer sr-only" required />
-                        <div className="text-center px-4 py-3 border border-[#E8DFD8] rounded-lg peer-checked:bg-[#8C6A53] peer-checked:text-white peer-checked:border-[#8C6A53] transition-all font-medium text-[#736B65]">
+                        <div className="text-center px-4 py-3 border border-[#E8DFD8] bg-white rounded-lg peer-checked:bg-[#8C6A53] peer-checked:text-white peer-checked:border-[#8C6A53] peer-focus-visible:ring-2 peer-focus-visible:ring-[#8C6A53]/50 peer-focus-visible:ring-offset-1 transition-all font-medium text-[#736B65] hover:border-[#8C6A53]/50">
                           {type}
                         </div>
                       </label>

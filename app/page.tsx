@@ -31,19 +31,19 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/consulting"
-                className="bg-[#8C6A53] hover:bg-[#6B4E3B] text-white px-8 py-4 rounded-md font-semibold text-lg transition-all text-center flex items-center justify-center gap-2 shadow-lg"
+                className="bg-[#8C6A53] hover:bg-[#6B4E3B] text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors text-center flex items-center justify-center gap-2 shadow-lg sm:shrink-0"
               >
                 우리 집 매물 내놓기 <ArrowRight className="w-5 h-5" />
               </Link>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <a
                   href="tel:010-0000-0000"
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-4 rounded-md font-medium transition-all flex items-center justify-center flex-1 sm:flex-none gap-2"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-4 rounded-md font-medium transition-colors flex items-center justify-center flex-1 gap-2"
                 >
                   <Phone className="w-5 h-5" /> 전화 상담
                 </a>
                 <KakaoChannelButton
-                  className="bg-[#FEE500] hover:bg-[#FEE500]/90 text-black px-6 py-4 rounded-md font-medium transition-all flex items-center justify-center flex-1 sm:flex-none gap-3 shadow-lg shadow-black/10"
+                  className="bg-[#FEE500] hover:bg-[#FEE500]/90 text-black px-6 py-4 rounded-md font-medium transition-colors flex items-center justify-center flex-1 gap-3 shadow-lg shadow-black/10"
                   disabledClassName="cursor-pointer"
                 >
                   <span>카카오톡 문의</span>
@@ -125,7 +125,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[#2C2825] text-center mb-16">매물 접수부터 계약까지</h2>
           
           <div className="flex flex-col md:flex-row justify-between relative">
-            <div className="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-[#E8DFD8] -translate-y-1/2 z-0" />
+            {/* Timeline connector through circle centers */}
+            <div className="hidden md:block absolute top-[32px] left-[15%] right-[15%] border-t-2 border-dashed border-[#E8DFD8] z-0" />
             
             {[
               { step: "01", title: "상담 신청", desc: "온라인 또는 전화로 매물 기본 정보를 남겨주시면 빠르게 연락드립니다." },
@@ -133,12 +134,12 @@ export default function Home() {
               { step: "03", title: "온·오프라인 홍보", desc: "매물의 장점이 잘 드러나게 사진 촬영 후, 적극적인 홍보를 시작합니다." },
               { step: "04", title: "투명한 조율 및 계약", desc: "조건에 맞는 손님을 모시고 꼼꼼한 확인을 거쳐 안전하게 계약을 마무리합니다." }
             ].map((item, i) => (
-              <div key={i} className="relative z-10 flex flex-col items-center text-center max-w-[200px] mx-auto mb-10 md:mb-0 bg-white">
-                <div className="w-16 h-16 bg-[#8C6A53] text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-md shadow-[#8C6A53]/20">
+              <div key={i} className="relative z-10 flex flex-col items-center text-center w-full md:w-1/4 px-2 mb-10 md:mb-0 bg-transparent">
+                <div className="w-16 h-16 bg-[#8C6A53] ring-4 ring-white text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-md shadow-[#8C6A53]/20 shrink-0">
                   {item.step}
                 </div>
                 <h3 className="font-bold text-lg text-[#2C2825] mb-2">{item.title}</h3>
-                <p className="text-sm text-[#736B65] leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-[#736B65] leading-relaxed max-w-[200px]">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -159,7 +160,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg hover:border-[#8C6A53]/30 transition-all cursor-pointer">
               <div className="relative h-60 w-full overflow-hidden">
                 <Image src="/case_apt.png" alt="월드파크 2단지 매도 사례" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-sm font-bold text-[#8C6A53]">
@@ -175,7 +176,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg transition-shadow cursor-pointer">
+            <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg hover:border-[#8C6A53]/30 transition-all cursor-pointer">
               <div className="relative h-60 w-full overflow-hidden">
                 <Image src="/case_officetel.png" alt="연남스테이 월세 사례" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-sm font-bold text-[#8C6A53]">

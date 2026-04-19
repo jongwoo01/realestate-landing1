@@ -72,24 +72,30 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-[#E8DFD8] py-4 px-4 flex flex-col space-y-4 shadow-lg">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#E8DFD8] py-4 px-4 flex flex-col space-y-2 shadow-lg animate-in fade-in slide-in-from-top-2 duration-200">
           {links.map((link) => (
             <Link
               key={link.path}
               href={link.path}
-              className="text-[#2C2825] font-medium py-2 border-b border-[#E8DFD8]/50 last:border-0"
+              className={`font-medium py-3 px-2 rounded-md transition-colors ${
+                pathname === link.path
+                  ? "text-[#8C6A53] bg-[#8C6A53]/5"
+                  : "text-[#736B65] hover:text-[#2C2825] hover:bg-gray-50"
+              }`}
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <Link
-            href="/consulting"
-            className="bg-[#8C6A53] text-center text-[#FCFAF8] px-4 py-3 rounded-md font-medium text-[16px] w-full"
-            onClick={() => setIsOpen(false)}
-          >
-            매물 상담 신청
-          </Link>
+          <div className="pt-2">
+            <Link
+              href="/consulting"
+              className="bg-[#8C6A53] text-center text-[#FCFAF8] px-4 py-3.5 rounded-md font-medium text-[16px] w-full hover:bg-[#6B4E3B] transition-colors flex justify-center items-center"
+              onClick={() => setIsOpen(false)}
+            >
+              매물 상담 신청
+            </Link>
+          </div>
         </div>
       )}
     </nav>
