@@ -20,11 +20,11 @@ export default function Home() {
         </div>
         <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 py-24 md:py-36 xl:py-48 flex flex-col justify-center h-full">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight drop-shadow-md">
               마포구 집주인을 위한<br />
               <span className="text-[#E8DFD8]">부담 없는 맞춤형 중개 상담</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#F2EBE5] mb-10 leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-[#F2EBE5] mb-10 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               성산동·망원동 아파트와 오피스텔 위주로 경험이 많습니다.<br className="hidden md:block"/>
               광고만 올리고 끝나는 중개가 아닌, 상담부터 계약까지 직접 꼼꼼하게 챙겨드립니다.
             </p>
@@ -162,7 +162,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg hover:border-[#8C6A53]/30 transition-all cursor-pointer">
               <div className="relative h-60 w-full overflow-hidden">
-                <Image src="/case_apt.png" alt="월드파크 2단지 매도 사례" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/case_apt.png" alt="월드파크 2단지 매도 사례" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-sm font-bold text-[#8C6A53]">
                   매도 계약 완료
                 </div>
@@ -178,7 +178,7 @@ export default function Home() {
 
             <div className="bg-white rounded-xl overflow-hidden border border-[#E8DFD8] group hover:shadow-lg hover:border-[#8C6A53]/30 transition-all cursor-pointer">
               <div className="relative h-60 w-full overflow-hidden">
-                <Image src="/case_officetel.png" alt="연남스테이 월세 사례" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/case_officetel.png" alt="연남스테이 월세 사례" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-sm font-bold text-[#8C6A53]">
                   월세 계약 완료
                 </div>

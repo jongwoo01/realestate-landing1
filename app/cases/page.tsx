@@ -54,6 +54,7 @@ export default function CasesPage() {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-md text-sm font-bold shadow-sm flex items-center gap-2">
