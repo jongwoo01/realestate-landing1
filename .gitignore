@@ -45,3 +45,4 @@ next-env.d.ts
 공인중개사 사진자료/
 공인중개사정보.md
 .gstack/
+.playwright-cli/
