@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local project metadata and source materials
+.serena/
+공인중개사 사진자료/
+공인중개사정보.md
