@@ -1,5 +1,82 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## KakaoTalk Channel Setup
+
+To connect the existing Kakao consultation buttons with Kakao's official web flow, set the values below in `.env.local`.
+
+```bash
+NEXT_PUBLIC_KAKAO_JS_KEY=your_kakao_javascript_key
+NEXT_PUBLIC_KAKAO_CHANNEL_PUBLIC_ID=_yourChannelId
+```
+
+Optional:
+
+```bash
+NEXT_PUBLIC_KAKAO_CHANNEL_URL=https://pf.kakao.com/_yourChannelId
+```
+
+Notes:
+
+- `NEXT_PUBLIC_KAKAO_CHANNEL_PUBLIC_ID` is the part after `https://pf.kakao.com/`.
+- When the JavaScript key and channel public ID are both present, the site uses Kakao JavaScript SDK `Kakao.Channel.chat()` on click.
+- When only the channel URL or public ID is present, the site falls back to the public channel chat URL.
+
+## Google Sheets Setup
+
+The consulting form can send submissions to Google Sheets through Google Apps Script.
+
+1. Create a Google Sheet and set the first row headers like this:
+
+```text
+createdAt | name | phone | transactionType | propertyType | location | details
+```
+
+2. Open the sheet and go to `Extensions -> Apps Script`.
+
+3. Paste this script:
+
+```javascript
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+  const data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    data.createdAt || new Date().toISOString(),
+    data.name || "",
+    data.phone || "",
+    data.transactionType || "",
+    data.propertyType || "",
+    data.location || "",
+    data.details || "",
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+4. In Apps Script, deploy it as a web app:
+
+- `Deploy -> New deployment`
+- Type: `Web app`
+- Execute as: `Me`
+- Who has access: `Anyone`
+
+5. Copy the deployed web app URL and add it to `.env.local`:
+
+```bash
+GOOGLE_SHEETS_WEBHOOK_URL=your_google_apps_script_web_app_url
+```
+
+6. Restart the Next.js server after updating `.env.local`.
+
+Notes:
+
+- If the sheet tab name is not `Sheet1`, update the script.
+- The app sends the form data to `/api/consulting`, and that route forwards it to Apps Script.
+- This keeps the webhook URL on the server side instead of exposing it in the browser.
+
 ## Getting Started
 
 First, run the development server:
