@@ -42,7 +42,7 @@ export default function CasesPage() {
         <div className="mb-12 md:mb-16 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-[#2C2825] mb-4">대표 거래 사례</h1>
           <p className="text-[#736B65] text-lg max-w-2xl mx-auto leading-relaxed">
-            마포구 성산동·망원동 대장 아파트부터 다세대 빌라까지, 종우부동산의 차별화된 중개 노하우로 빠르고 만족스러운 거래를 이끌어냅니다.
+            마포구 성산동·망원동 대장 아파트부터 다세대 빌라까지, 마포부동산의 차별화된 중개 노하우로 빠르고 만족스러운 거래를 이끌어냅니다.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function CasesPage() {
                     <p className="text-[#2C2825] font-medium">{item.title}</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-[#736B65] mb-1">종우부동산의 솔루션</h3>
+                    <h3 className="text-sm font-semibold text-[#736B65] mb-1">마포부동산의 솔루션</h3>
                     <p className="text-[#2C2825] font-medium">{item.strategy}</p>
                   </div>
                 </div>

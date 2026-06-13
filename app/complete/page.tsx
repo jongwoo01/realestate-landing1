@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { kakaoChannelChatUrl } from "@/lib/contact";
+import { kakaoChannelChatUrl, kakaoChannelName, officePhone, officePhoneHref } from "@/lib/contact";
 
 export default function CompletePage() {
   return (
@@ -14,7 +14,7 @@ export default function CompletePage() {
           <h1 className="text-3xl font-bold text-[#2C2825] mb-4">상담 신청이 완료되었습니다</h1>
           <p className="text-[#736B65] text-lg mb-8 leading-relaxed">
             남겨주신 소중한 정보를 확인한 후,<br className="hidden md:block" />
-            이종우 대표가 직접 연락드려 친절히 안내해 드리겠습니다.
+            마포부동산 담당자가 직접 연락드려 친절히 안내해 드리겠습니다.
           </p>
           
           <div className="bg-[#F2EBE5] rounded-xl p-6 w-full mb-10 text-left">
@@ -25,16 +25,16 @@ export default function CompletePage() {
             <div className="space-y-2">
               <div className="flex items-center gap-3 text-[#2C2825] font-medium">
                 <span className="text-[#8C6A53]">대표전화</span>
-                <a href="tel:010-0000-0000" className="hover:underline">010-0000-0000</a>
+                <a href={officePhoneHref} className="hover:underline">{officePhone}</a>
               </div>
               <div className="flex items-center gap-3 text-[#2C2825] font-medium">
                 <span className="text-[#8C6A53]">카카오톡</span>
                 {kakaoChannelChatUrl ? (
                   <a href={kakaoChannelChatUrl} className="hover:underline">
-                    채널 &#39;종우부동산 상담센터&#39; 채팅 연결
+                    채널 &#39;{kakaoChannelName}&#39; 채팅 연결
                   </a>
                 ) : (
-                  <span>채널 &#39;종우부동산 상담센터&#39; 검색</span>
+                  <span>채널 &#39;{kakaoChannelName}&#39; 검색</span>
                 )}
               </div>
             </div>

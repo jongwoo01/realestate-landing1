@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Phone } from "lucide-react";
 import KakaoChannelButton from "@/components/KakaoChannelButton";
+import { officePhone, officePhoneHref } from "@/lib/contact";
 
 export default function ConsultingPage() {
   const router = useRouter();
@@ -50,7 +51,7 @@ export default function ConsultingPage() {
         <div className="mb-10 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-[#2C2825] mb-4">매물 상담 신청</h1>
           <p className="text-[#736B65] text-lg">
-            아래 정보를 남겨주시면, 이종우 대표가 직접 확인 후 빠르게 연락드리겠습니다.
+            아래 정보를 남겨주시면, 마포부동산 담당자가 직접 확인 후 빠르게 연락드리겠습니다.
           </p>
         </div>
 
@@ -178,8 +179,8 @@ export default function ConsultingPage() {
           <div className="mt-8 text-center border-t border-[#E8DFD8] pt-8">
             <p className="text-[#736B65] mb-3">전화나 카카오톡 상담이 더 편하신가요?</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:010-0000-0000" className="flex items-center justify-center gap-2 px-6 py-3 border border-[#E8DFD8] rounded-md text-[#2C2825] font-medium hover:bg-[#F2EBE5] transition-colors">
-                <Phone className="w-5 h-5" /> 010-0000-0000
+              <a href={officePhoneHref} className="flex items-center justify-center gap-2 px-6 py-3 border border-[#E8DFD8] rounded-md text-[#2C2825] font-medium hover:bg-[#F2EBE5] transition-colors">
+                <Phone className="w-5 h-5" /> {officePhone}
               </a>
               <KakaoChannelButton
                 className="flex items-center justify-center gap-3 px-6 py-3 bg-[#FEE500] rounded-md text-black font-medium hover:bg-[#FEE500]/90 transition-colors"

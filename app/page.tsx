@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ChevronRight, Phone, ArrowRight } from "lucide-react";
 import KakaoChannelButton from "@/components/KakaoChannelButton";
+import { officePhoneHref } from "@/lib/contact";
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
               </Link>
               <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <a
-                  href="tel:010-0000-0000"
+                  href={officePhoneHref}
                   className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-4 rounded-md font-medium transition-colors flex items-center justify-center flex-1 gap-2"
                 >
                   <Phone className="w-5 h-5" /> 전화 상담
@@ -58,7 +59,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#2C2825] mb-4">왜 종우부동산일까요?</h2>
+            <h2 className="text-3xl font-bold text-[#2C2825] mb-4">왜 마포부동산일까요?</h2>
             <p className="text-[#736B65] text-lg">
               집주인의 입장을 최우선으로 생각하는 믿을 수 있는 지역 중개 파트너
             </p>
@@ -68,7 +69,7 @@ export default function Home() {
             {[
               {
                 title: "대표 공인중개사의 직접 소통",
-                desc: "보조원이 아닌 공인중개사 이종우 대표가 직접 고객님의 매물을 파악하고 상세하게 안내부터 계약까지 책임집니다.",
+                desc: "보조원이 아닌 담당 공인중개사가 직접 고객님의 매물을 파악하고 상세하게 안내부터 계약까지 책임집니다.",
               },
               {
                 title: "성산동·망원동 전문성",
@@ -97,10 +98,10 @@ export default function Home() {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[#E8DFD8] flex flex-col md:flex-row gap-10 items-center">
             <div className="md:w-1/3 flex flex-col items-center text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-[#8C6A53] to-[#6B4E3B] rounded-full flex items-center justify-center text-white mb-4">
-                <span className="text-3xl font-bold opacity-80">이종우</span>
+                <span className="text-2xl font-bold opacity-80">마포부동산</span>
               </div>
-              <h3 className="font-bold text-xl text-[#2C2825] mb-1">이종우 대표</h3>
-              <p className="text-[#736B65] text-sm">종우부동산중개사무소</p>
+              <h3 className="font-bold text-xl text-[#2C2825] mb-1">마포부동산 대표</h3>
+              <p className="text-[#736B65] text-sm">마포부동산중개사무소</p>
             </div>
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold text-[#2C2825] mb-4">
@@ -152,7 +153,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-10">
             <div>
               <h2 className="text-3xl font-bold text-[#2C2825] mb-2">최근 성사된 주요 거래</h2>
-              <p className="text-[#736B65]">종우부동산의 차별화된 중개 노하우를 확인해보세요.</p>
+              <p className="text-[#736B65]">마포부동산의 차별화된 중개 노하우를 확인해보세요.</p>
             </div>
             <Link href="/cases" className="hidden sm:flex text-[#8C6A53] font-medium items-center hover:opacity-80 transition-opacity">
               전체 사례 보기 <ChevronRight className="w-4 h-4 ml-1" />
@@ -202,7 +203,7 @@ export default function Home() {
       {/* CTA Bottom text-center block */}
       <section className="py-24 bg-[#8C6A53] text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">소중한 우리집, 이제 종우부동산과 상의하세요.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">소중한 우리집, 이제 마포부동산과 상의하세요.</h2>
           <p className="text-white/80 text-lg mb-10">
             마포구 1등 안심 중개, 빠르고 꼼꼼한 일처리로 보답하겠습니다.<br className="hidden md:block" />
             궁금하신 점이 있다면 부담 없이 상담을 남겨주세요.

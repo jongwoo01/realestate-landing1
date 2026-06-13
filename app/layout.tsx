@@ -11,7 +11,7 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "종우부동산중개사무소 | 마포구 성산동·망원동 집주인 상담센터",
+  title: "마포부동산중개사무소 | 마포구 성산동·망원동 집주인 상담센터",
   description: "마포구 성산동과 인근 지역 주거용 매물 전문. 집주인 입장에서 부담 없는 양심적인 부동산 중개 상담을 도와드립니다.",
 };
 

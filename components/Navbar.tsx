@@ -19,8 +19,8 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-md border-b border-[#E8DFD8] z-50 transition-all duration-300">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo.svg" alt="종우부동산" width={32} height={32} className="w-8 h-8" />
-          <span className="font-semibold text-lg text-[#2C2825] tracking-tight">종우부동산</span>
+          <Image src="/logo.svg" alt="마포부동산" width={32} height={32} className="w-8 h-8" />
+          <span className="font-semibold text-lg text-[#2C2825] tracking-tight">마포부동산</span>
         </Link>
 
         {/* Desktop Menu */}
