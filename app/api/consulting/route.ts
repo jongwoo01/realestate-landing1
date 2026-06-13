@@ -9,6 +9,11 @@ type ConsultingPayload = {
   details?: string;
 };
 
+type WebhookResponse = {
+  ok?: boolean;
+  message?: string;
+};
+
 function isValidPayload(body: unknown): body is ConsultingPayload {
   if (!body || typeof body !== "object") {
     return false;
@@ -23,6 +28,19 @@ function isValidPayload(body: unknown): body is ConsultingPayload {
     typeof payload.propertyType === "string" &&
     typeof payload.location === "string" &&
     (payload.details === undefined || typeof payload.details === "string")
+  );
+}
+
+function isValidWebhookResponse(body: unknown): body is WebhookResponse {
+  if (!body || typeof body !== "object") {
+    return false;
+  }
+
+  const payload = body as Record<string, unknown>;
+
+  return (
+    (payload.ok === undefined || typeof payload.ok === "boolean") &&
+    (payload.message === undefined || typeof payload.message === "string")
   );
 }
 
@@ -57,12 +75,22 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify(payload),
     cache: "no-store",
-    redirect: "manual",
+    redirect: "follow",
   }).catch(() => null);
 
-  if (!response || (response.status !== 200 && response.status !== 302)) {
+  if (!response || response.status !== 200) {
     return NextResponse.json(
       { ok: false, message: "Failed to write to Google Sheets." },
+      { status: 502 },
+    );
+  }
+
+  const result = (await response.json().catch(() => null)) as unknown;
+  const webhookMessage = isValidWebhookResponse(result) ? result.message : undefined;
+
+  if (!isValidWebhookResponse(result) || result.ok !== true) {
+    return NextResponse.json(
+      { ok: false, message: webhookMessage ?? "Webhook reported failure." },
       { status: 502 },
     );
   }
